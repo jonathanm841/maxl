@@ -3,15 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MaxL Systems - A Revolutionary Compression Algorithm</title>
+  <title>MaxL Systems - VLC Decoding With Unprecedented Speed</title>
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="256x256" href="/favicon-256.png">
+  <link rel="apple-touch-icon" href="/favicon-256.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <script type="module" src="/main.js"></script>
 </head>
 <body>
   <video class="bg-video" autoplay muted playsinline preload="auto">
-    <source src="https://www.shutterstock.com/shutterstock/videos/3493526365/preview/stock-footage-appearing-of-futuristic-high-performance-gpu-chip-for-artificial-intelligence-compute-creation-of.webm" type="video/webm">
+    <source src="/assets/chip.mov" type="video/mp4">
+    <source src="/assets/chip.mov" type="video/quicktime">
   </video>
 
   <main class="stage">
@@ -23,11 +28,15 @@
         <span class="logo__name">MAXL</span>
         <span class="logo__tagline">SYSTEMS</span>
       </div>
-      <p class="logo__strapline">MaxL Revolutionizes VLC Decoding with Unprecedented Speed</p>
+      <p class="logo__strapline">MaxL's Breakthrough Technology Increases VLC Decoding Speed By 300% to 1000%</p>
+      <p class="logo__subline">Representing The Most Significant Leap in Decompression Speed In Decades</p>
     </div>
   </main>
 
   <footer class="footer">
+    <div class="footer__line footer__inventor">
+      <span>Inventor: Timothy Lee, PhD</span>
+    </div>
     <div class="footer__line">
       <span>MaxL Systems Ltd</span>
       <span>124 City Road</span>
@@ -52,6 +61,26 @@
           bgVideo.currentTime = bgVideo.duration;
         }
       });
+
+      const logo = document.querySelector(".logo");
+      const footer = document.querySelector(".footer");
+
+      function centreVideo() {
+        if (!logo || !footer) return;
+        const contentBottom = logo.getBoundingClientRect().bottom;
+        const footerTop = footer.getBoundingClientRect().top;
+        const midY = (contentBottom + footerTop) / 2;
+        bgVideo.style.top = midY + "px";
+        bgVideo.style.bottom = "auto";
+        bgVideo.style.transform = "translate(-50%, -50%)";
+      }
+
+      centreVideo();
+      window.addEventListener("resize", centreVideo);
+      window.addEventListener("load", centreVideo);
+      if (document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(centreVideo);
+      }
     }
   </script>
 </body>
