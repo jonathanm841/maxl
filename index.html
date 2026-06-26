@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MaxL Systems - A Revolutionary Compression Algorithm</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <video class="bg-video" autoplay muted playsinline preload="auto">
+    <source src="https://www.shutterstock.com/shutterstock/videos/3493526365/preview/stock-footage-appearing-of-futuristic-high-performance-gpu-chip-for-artificial-intelligence-compute-creation-of.webm" type="video/webm">
+  </video>
+
+  <main class="stage">
+    <div class="logo" role="img" aria-label="MAXL Systems">
+      <div class="logo__mark">
+        <img src="/assets/logo.png" alt="" width="476" height="635" class="logo__icon">
+      </div>
+      <div class="logo__wordmark">
+        <span class="logo__name">MAXL</span>
+        <span class="logo__tagline">SYSTEMS</span>
+      </div>
+      <p class="logo__strapline">MaxL Revolutionizes VLC Decoding with Unprecedented Speed</p>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__line">
+      <span>MaxL Systems Ltd</span>
+      <span>124 City Road</span>
+      <span>London, EC1V 2NX</span>
+      <span>England</span>
+    </div>
+    <div class="footer__line footer__patents">
+      Patents &mdash; GB2643076, GB2643075, GB2643347
+    </div>
+  </footer>
+
+  <script>
+    const bgVideo = document.querySelector(".bg-video");
+    if (bgVideo) {
+      bgVideo.playbackRate = 1.0;
+      bgVideo.addEventListener("loadedmetadata", () => {
+        bgVideo.playbackRate = 1.0;
+      });
+      bgVideo.addEventListener("ended", () => {
+        bgVideo.pause();
+        if (bgVideo.duration && isFinite(bgVideo.duration)) {
+          bgVideo.currentTime = bgVideo.duration;
+        }
+      });
+    }
+  </script>
+</body>
+</html>

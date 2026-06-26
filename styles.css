@@ -1,0 +1,195 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --void: #030304;
+  --deep: #0a0a0f;
+  --accent: #6b8cff;
+  --accent-dim: rgba(107, 140, 255, 0.12);
+  --text: rgba(220, 225, 240, 0.55);
+  --text-bright: rgba(245, 247, 255, 0.92);
+  --text-muted: rgba(200, 205, 220, 0.45);
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: "Montserrat", system-ui, sans-serif;
+  background: var(--void);
+  color: var(--text);
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Background video ── */
+
+.bg-video {
+  position: fixed;
+  bottom: 11vh;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 72%;
+  height: 40vh;
+  object-fit: contain;
+  object-position: center center;
+  z-index: 0;
+  pointer-events: none;
+  -webkit-mask-image:
+    linear-gradient(to bottom, transparent 0%, #000 30%, #000 65%, transparent 100%),
+    linear-gradient(to right, transparent 0%, #000 12%, #000 88%, transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-image:
+    linear-gradient(to bottom, transparent 0%, #000 30%, #000 65%, transparent 100%),
+    linear-gradient(to right, transparent 0%, #000 12%, #000 88%, transparent 100%);
+  mask-composite: intersect;
+}
+
+/* ── Center stage ── */
+
+.stage {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding-bottom: 44vh;
+}
+
+/* ── Logo ── */
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  user-select: none;
+}
+
+.logo__mark {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo__mark::before {
+  content: "";
+  position: absolute;
+  width: 130%;
+  height: 130%;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(86, 204, 242, 0.05) 0%,
+    rgba(187, 107, 217, 0.03) 40%,
+    transparent 70%
+  );
+  filter: blur(20px);
+  animation: icon-glow 8s ease-in-out infinite alternate;
+}
+
+.logo__icon {
+  position: relative;
+  width: clamp(90px, 14vw, 130px);
+  height: auto;
+  filter: drop-shadow(0 4px 16px rgba(0, 0, 0, 0.45));
+}
+
+.logo__wordmark {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.logo__name {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--text-bright);
+  line-height: 1;
+}
+
+.logo__tagline {
+  font-size: clamp(0.55rem, 1.2vw, 0.7rem);
+  font-weight: 300;
+  letter-spacing: 0.55em;
+  color: var(--text-muted);
+  line-height: 1;
+  padding-left: 0.55em;
+}
+
+.logo__strapline {
+  margin-top: 1rem;
+  max-width: 32ch;
+  font-size: clamp(0.62rem, 1.4vw, 0.8rem);
+  font-weight: 300;
+  letter-spacing: 0.12em;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.55);
+  text-align: center;
+}
+
+@keyframes icon-glow {
+  from { opacity: 0.7; transform: scale(1); }
+  to   { opacity: 1;   transform: scale(1.06); }
+}
+
+/* ── Footer ── */
+
+.footer {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.6rem;
+  font-weight: 300;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.62);
+  pointer-events: none;
+  user-select: none;
+}
+
+.footer__line {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.4rem 1rem;
+}
+
+.footer__patents {
+  letter-spacing: 0.12em;
+}
+
+.footer__line span {
+  position: relative;
+}
+
+.footer__line span:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: -0.55rem;
+  top: 50%;
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  background: currentColor;
+  transform: translateY(-50%);
+  opacity: 0.6;
+}
