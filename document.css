@@ -419,14 +419,86 @@ body.doc {
   }
 
   .doc-page__footer {
-    padding-top: 1.5rem;
+    padding-top: 1rem;
     margin-top: auto;
     flex-shrink: 0;
   }
 
   .doc-page__header {
-    margin-bottom: 1.25rem;
-    padding-bottom: 0.85rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.65rem;
+  }
+
+  /* Page 1 — compact cover to fit Opportunity */
+  #page-1 {
+    padding: 1.35cm 2cm 1.15cm;
+  }
+
+  #page-1 .doc-page__header {
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.5rem;
+  }
+
+  #page-1 .doc-cover__badge {
+    margin-bottom: 0.85rem;
+    padding: 0.4rem 0.85rem;
+    font-size: 0.72rem;
+  }
+
+  #page-1 .doc-cover__badge img {
+    width: 18px;
+    height: 18px;
+  }
+
+  #page-1 .doc-cover__title {
+    font-size: 1.75rem;
+    margin-bottom: 0.55rem;
+    white-space: normal;
+  }
+
+  #page-1 .doc p.doc-cover__strap {
+    font-size: 0.8rem;
+    line-height: 1.45;
+    margin-bottom: 0.45rem;
+    white-space: normal;
+  }
+
+  #page-1 .doc p.doc-cover__sub {
+    font-size: 0.55rem;
+    margin-bottom: 0.65rem;
+    white-space: normal;
+  }
+
+  #page-1 .doc h2.doc-chip {
+    margin: 0.65rem 0 0.35rem;
+    padding: 0.35rem 0.7rem;
+    font-size: 0.72rem;
+  }
+
+  #page-1 .doc p {
+    font-size: 0.76rem;
+    line-height: 1.48;
+    margin-bottom: 0.5rem;
+  }
+
+  #page-1 .doc-page__footer {
+    padding-top: 0.65rem;
+  }
+
+  #page-2 .doc p {
+    font-size: 0.78rem;
+    line-height: 1.48;
+    margin-bottom: 0.55rem;
+  }
+
+  #page-2 .doc li {
+    font-size: 0.76rem;
+    line-height: 1.45;
+    margin-bottom: 0.25rem;
+  }
+
+  #page-2 .doc h2.doc-chip {
+    margin: 0.75rem 0 0.4rem;
   }
 
   .doc-cover__badge {
@@ -452,7 +524,9 @@ body.doc {
   }
 
   .doc h2.doc-chip {
-    margin: 1.25rem 0 0.65rem;
+    margin: 0.9rem 0 0.5rem;
+    padding: 0.45rem 0.8rem;
+    font-size: 0.76rem;
     display: flex;
     width: fit-content;
     break-inside: avoid;
@@ -514,6 +588,11 @@ body.doc {
   .doc-tag i {
     width: 4px;
     height: 4px;
+  }
+
+  .doc .patent-list li {
+    padding: 0.4rem 0;
+    font-size: 0.74rem;
   }
 }
 
