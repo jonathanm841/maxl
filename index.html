@@ -10,26 +10,46 @@
   <link rel="apple-touch-icon" href="/favicon-256.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <script type="module" src="/main.js"></script>
 </head>
 <body>
+  <div class="grid-bg" aria-hidden="true"></div>
+
   <video class="bg-video" autoplay muted playsinline preload="auto">
     <source src="/assets/chip.mov" type="video/mp4">
     <source src="/assets/chip.mov" type="video/quicktime">
   </video>
 
   <main class="stage">
-    <div class="logo" role="img" aria-label="MAXL Systems">
-      <div class="logo__mark">
-        <img src="/assets/logo.png" alt="" width="476" height="635" class="logo__icon">
+    <div class="hero">
+      <div class="hero__badge">
+        <img src="/favicon-64.png" alt="" width="26" height="26">
+        <span>MaxL Systems</span>
       </div>
-      <div class="logo__wordmark">
-        <span class="logo__name">MAXL</span>
-        <span class="logo__tagline">SYSTEMS</span>
+
+      <h1 class="hero__headline">
+        <span class="hero__headline-strong">A Groundbreaking Leap In</span><br>
+        <span class="hero__headline-muted">VLC Decoding Speed</span>
+      </h1>
+
+      <p class="hero__sub">
+        MaxL's Breakthrough Technology Increases VLC Decoding Speed By<br>
+        <span class="hero__accent">Up To 2000%</span>
+      </p>
+
+      <p class="hero__tags-label">Revolutionising:</p>
+      <div class="hero__tags">
+        <span class="tag"><i></i>AI Architecture</span>
+        <span class="tag"><i></i>Video and Audio Streaming</span>
+        <span class="tag"><i></i>Autonomous Vehicles</span>
+        <span class="tag"><i></i>High-Frequency Trading</span>
+        <span class="tag"><i></i>Satellite Infrastructure</span>
+        <span class="tag"><i></i>Networking</span>
+        <span class="tag"><i></i>IoT Devices</span>
+        <span class="tag"><i></i>Robotics</span>
+        <span class="tag"><i></i>File Storage</span>
       </div>
-      <p class="logo__strapline">MaxL's Breakthrough Technology Increases VLC Decoding Speed By 300% to 1000%</p>
-      <p class="logo__subline">Representing The Most Significant Leap in Decompression Speed In Decades</p>
     </div>
   </main>
 
@@ -62,12 +82,12 @@
         }
       });
 
-      const logo = document.querySelector(".logo");
+      const hero = document.querySelector(".hero");
       const footer = document.querySelector(".footer");
 
       function centreVideo() {
-        if (!logo || !footer) return;
-        const contentBottom = logo.getBoundingClientRect().bottom;
+        if (!hero || !footer) return;
+        const contentBottom = hero.getBoundingClientRect().bottom;
         const footerTop = footer.getBoundingClientRect().top;
         const midY = (contentBottom + footerTop) / 2;
         bgVideo.style.top = midY + "px";
