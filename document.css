@@ -322,10 +322,28 @@ body.doc {
   font-size: 0.78rem;
 }
 
-.doc .patent-list strong {
-  display: block;
-  font-weight: 500;
+.doc .patent-list__row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.55rem;
   margin-bottom: 0.2rem;
+}
+
+.doc .patent-list strong {
+  font-weight: 500;
+}
+
+.doc .patent-list__link {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--accent-orange);
+  text-decoration: none;
+}
+
+.doc .patent-list__link:hover {
+  text-decoration: underline;
 }
 
 /* ── Industries table ── */
