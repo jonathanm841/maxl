@@ -74,8 +74,9 @@ body {
   position: relative;
   z-index: 1;
   display: flex;
+  flex-direction: column;
   align-items: flex-start;
-  justify-content: center;
+  justify-content: flex-start;
   min-height: 100vh;
   min-height: 100dvh;
   padding: 10vh 6vw 44vh;
@@ -227,4 +228,113 @@ body {
   background: currentColor;
   transform: translateY(-50%);
   opacity: 0.6;
+}
+
+/* ── Mobile ── */
+
+@media (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  .bg-video {
+    position: relative;
+    left: auto;
+    bottom: auto;
+    top: auto;
+    transform: none;
+    align-self: center;
+    width: 100%;
+    max-width: 280px;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    margin: 1.75rem auto 0;
+    display: block;
+    object-fit: cover;
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 12%, #000 88%, transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0%, #000 12%, #000 88%, transparent 100%);
+  }
+
+  .stage {
+    min-height: auto;
+    padding: 1.5rem 1.25rem 0;
+    align-items: stretch;
+  }
+
+  .hero {
+    width: 100%;
+  }
+
+  .hero__badge {
+    font-size: 0.82rem;
+    padding: 0.5rem 0.9rem;
+  }
+
+  .hero__badge img {
+    width: 22px;
+    height: 22px;
+  }
+
+  .hero__headline {
+    margin-top: 1.5rem;
+    font-size: clamp(1.65rem, 8vw, 2.25rem);
+  }
+
+  .hero__sub {
+    margin-top: 1.25rem;
+    font-size: 0.92rem;
+    line-height: 1.5;
+    white-space: normal;
+    max-width: 100%;
+  }
+
+  .hero__tags-label {
+    margin-top: 1.5rem;
+    font-size: 0.72rem;
+  }
+
+  .hero__tags {
+    gap: 0.5rem;
+  }
+
+  .tag {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.7rem;
+  }
+
+  .footer {
+    position: relative;
+    margin-top: 2.5rem;
+    padding: 1.5rem 1rem 1.25rem;
+    background: linear-gradient(to bottom, transparent, var(--void) 12%);
+    gap: 0.55rem;
+  }
+
+  .footer__line {
+    gap: 0.35rem 0.75rem;
+    font-size: 0.58rem;
+    line-height: 1.5;
+    text-align: center;
+  }
+
+  .footer__patents {
+    padding: 0 0.5rem;
+    line-height: 1.45;
+  }
+}
+
+@media (max-width: 380px) {
+  .hero__headline {
+    font-size: 1.55rem;
+  }
+
+  .hero__sub {
+    font-size: 0.85rem;
+  }
+
+  .tag {
+    font-size: 0.65rem;
+    padding: 0.45rem 0.65rem;
+  }
 }

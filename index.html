@@ -16,11 +16,6 @@
 <body>
   <div class="grid-bg" aria-hidden="true"></div>
 
-  <video class="bg-video" autoplay muted playsinline preload="auto">
-    <source src="/assets/chip.mov" type="video/mp4">
-    <source src="/assets/chip.mov" type="video/quicktime">
-  </video>
-
   <main class="stage">
     <div class="hero">
       <div class="hero__badge">
@@ -50,6 +45,11 @@
         <span class="tag"><i></i>File Storage</span>
       </div>
     </div>
+
+    <video class="bg-video" autoplay muted playsinline preload="auto">
+      <source src="/assets/chip.mov" type="video/mp4">
+      <source src="/assets/chip.mov" type="video/quicktime">
+    </video>
   </main>
 
   <footer class="footer">
@@ -69,6 +69,8 @@
 
   <script>
     const bgVideo = document.querySelector(".bg-video");
+    const isMobile = () => window.matchMedia("(max-width: 768px)").matches;
+
     if (bgVideo) {
       bgVideo.playbackRate = 1.0;
       bgVideo.addEventListener("loadedmetadata", () => {
@@ -85,7 +87,12 @@
       const footer = document.querySelector(".footer");
 
       function centreVideo() {
-        if (!hero || !footer) return;
+        if (!hero || !footer || isMobile()) {
+          bgVideo.style.top = "";
+          bgVideo.style.bottom = "";
+          bgVideo.style.transform = "";
+          return;
+        }
         const contentBottom = hero.getBoundingClientRect().bottom;
         const footerTop = footer.getBoundingClientRect().top;
         const midY = (contentBottom + footerTop) / 2;
