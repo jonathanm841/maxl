@@ -1,5 +1,3 @@
-import "./document.css";
-
 const PDF_TITLE = "The MaxL System";
 
 const downloadBtn = document.getElementById("download-pdf");

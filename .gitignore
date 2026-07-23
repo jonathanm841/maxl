@@ -1,4 +1,1 @@
-node_modules
-dist
-.venv
-reference-logo.png
+.DS_Store
